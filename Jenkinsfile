@@ -15,7 +15,7 @@ pipeline{
             scripts{
             def pomfile = readMavenPom file: 'pom.xml'
             def version = pomfile.version
-            def nexuRepo = version.endWith("SNAPSHOT") ? "pets-app-snapshot" : "pets-app-release"
+            def nexusRepo = version.endWith("SNAPSHOT") ? "pets-app-snapshot" : "pets-app-release"
             nexusArtifactUploader artifacts: [[artifactId: 'maven-project',
              classifier: '', file: '/var/lib/jenkins/workspace/Declarative_Pipeline_Job/webapp/target/webapp.war', 
              type: 'webapps.war']], credentialsId: 'nexus3', 
