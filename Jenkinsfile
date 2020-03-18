@@ -30,7 +30,7 @@ pipeline{
                // copy war file to tomcat webapps
                sh "scp ssh -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.43.139: /opt/apache-tomcat-9.0.31/webapps/pets-app.war"
                
-       
+          }
       }
     }
 
