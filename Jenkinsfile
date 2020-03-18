@@ -1,8 +1,6 @@
 pipeline{
   agent any
-  tools{
-   mavan3 'maven'
-  }
+  
   stages{
     stage('SCM checkout'){
        steps{
@@ -13,6 +11,7 @@ pipeline{
   stage('Maven build/Package'){
        steps{
          sh 'mvn clean package'
+         tool name: 'maven3', type: 'maven'
      }
    }
 
